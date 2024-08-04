@@ -1,21 +1,12 @@
-async function fetchDonationData() {
-    const url = 'http://localhost:3000/scrape';
+document.addEventListener("DOMContentLoaded", function() {
+    const raised = 3000;
+    const goal = 22000;
 
-    console.log('Requesting donation data from backend at:', new Date().toLocaleString());
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
+    document.getElementById('raised').textContent = `$${raised.toLocaleString()} Raised`;
+    document.getElementById('goal').textContent = `Goal $${goal.toLocaleString()}`;
 
-        console.log('Fetched donation data:', data);
-
-        document.getElementById('total').textContent = data.raised;
-        document.getElementById('goal').textContent = data.goal;
-    } catch (error) {
-        console.error('Error fetching donation data:', error);
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    fetchDonationData();
-    setInterval(fetchDonationData, 30000); // Refresh every 30 seconds
+    const progressPercentage = (raised / goal) * 100;
+    const progressBar = document.getElementById('progress-bar');
+    progressBar.style.width = `${progressPercentage}%`;
+    progressBar.setAttribute('aria-valuenow', progressPercentage.toFixed(2));
 });

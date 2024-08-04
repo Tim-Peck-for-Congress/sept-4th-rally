@@ -1,0 +1,57 @@
+/* main.css */
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+h1, h2 {
+    color: #343a40;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: #007bff;
+}
+
+.card-text {
+    color: #6c757d;
+}
+
+.btn-primary, .btn-secondary {
+    margin-right: 0.5rem;
+}
+
+.progress {
+    height: 1.5rem;
+}
+
+.progress-bar {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+}
+
+.section {
+    margin-bottom: 3rem;
+}
