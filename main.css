@@ -2,7 +2,8 @@
 
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: #f8f9fa;
+  
+    background: url('img/bg.png') !important;
 }
 
 header {
@@ -14,21 +15,27 @@ h1, h2 {
 }
 
 .card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #1b3560;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s;
 }
 
+.card-body{
+    background: #1b3560;
+    color: white;
+    border-radius: 0 0 5px 5px;
+}
 .card:hover {
     transform: scale(1.05);
 }
 
 .card-title {
     font-size: 1.25rem;
-    color: #007bff;
+    color: #fff;
 }
 
 .card-text {
-    color: #6c757d;
+    color: #fff;
 }
 
 .btn-primary, .btn-secondary {
@@ -36,13 +43,13 @@ h1, h2 {
 }
 
 .progress {
-    height: 1.5rem;
-}
-
-.progress-bar {
-    font-size: 1rem;
-    line-height: 1.5rem;
-}
+    height: 30px;
+  }
+  
+  .progress-bar {
+    background-color: #007bff;
+  }
+  
 
 ul {
     padding-left: 1.5rem;
@@ -55,3 +62,48 @@ ul li {
 .section {
     margin-bottom: 3rem;
 }
+
+
+
+  @media (max-width: 767.98px) {
+    /* Style for devices with width under 768px */
+    .card {
+        display: flex;
+        flex-direction: column;
+      }
+      .card:nth-child(even) {
+        flex-direction: column-reverse !important;
+      }
+   
+    .candidates.section .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .candidates.section .col-md-3 {
+      flex: 1 1 100%;
+    }
+    .candidates.section .card {
+    max-height: 175px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .candidates.section .card img{
+     max-height: 160px;
+     max-width: 160px;
+     border-radius: 50%;
+     margin: 10px;
+    }
+    .candidates.section .card-body {
+      flex: 1;
+    }
+    .candidates.section .card:nth-child(odd) {
+      flex-direction: row;
+    }
+    .candidates.section .card:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+  }
+  
+
