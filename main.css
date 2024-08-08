@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  
+
     background: url('img/bg.png') !important;
 }
 
@@ -43,13 +43,15 @@ h1, h2 {
 }
 
 .progress {
+  border: 1px solid gray;
     height: 30px;
   }
-  
+
   .progress-bar {
     background-color: #007bff;
+ 
   }
-  
+
 
 ul {
     padding-left: 1.5rem;
@@ -74,7 +76,7 @@ ul li {
       .card:nth-child(even) {
         flex-direction: column-reverse !important;
       }
-   
+
     .candidates.section .row {
       display: flex;
       flex-wrap: wrap;
@@ -105,5 +107,124 @@ ul li {
       flex-direction: row-reverse;
     }
   }
-  
 
+  .sponsorship .thermometer {
+    width: 50px;
+    height: 200px;
+    border: 1px solid #000;
+    position: relative;
+    background-color: #e0e0e0;
+    margin: 20px 0;
+}
+
+.sponsorship .thermometer-inner {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+
+/* Remove bullet points and padding from the unordered lists */
+.sponsorship ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* Increase the font size for the sponsorship levels */
+.sponsorship ul li {
+  font-size: 1.5em;
+}
+
+/* Increase the size of the emojis */
+.sponsorship ul li span {
+  font-size: 2em;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@900&family=Lobster:wght@900&display=swap');
+
+.rally-title {
+  font-family: 'Lobster', cursive;
+  color: #AC0015;
+  font-size: 3.5em;
+  line-height: 1.2;
+  font-weight: 900;
+  margin-bottom: 0px;
+  transform: rotate(-3deg);
+}
+
+.hosted-by, .candidate-name, .candidate-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 900;
+
+}
+
+.hosted-by {
+  color: #1b3560;
+  font-size: 2em;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.candidate-name {
+  color: #1b3560;
+  font-size: 3em;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+}
+
+.candidate-title {
+  color: lightblue;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  margin-top: 0;
+ 
+}
+
+
+
+.firework-1{
+  position: absolute;
+  width: 219px;
+  right: 50px;
+  top: 150px;
+}
+.firework-2{
+  position: absolute;
+  width: 100px;
+  right: 239px;
+  top: 44px;
+}
+.firework-3{
+  position: absolute;
+  width: 109px;
+  left: 248px;
+  top: 202px;
+}
+.firework-4{
+  position: absolute;
+  width: 200px;
+  left: 64px;
+  top: 37px;
+}
+
+@keyframes rotateBackAndForth {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.rotate-animation {
+  animation: rotateBackAndForth 3s ease-in-out infinite;
+}
