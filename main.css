@@ -49,7 +49,7 @@ h1, h2 {
 
   .progress-bar {
     background-color: #007bff;
- 
+
   }
 
 
@@ -173,11 +173,10 @@ ul li {
 }
 
 .candidate-title {
-  color: lightblue;
+  color: black;
   font-size: 1.3em;
   text-transform: uppercase;
   margin-top: 0;
- 
 }
 
 
@@ -228,3 +227,41 @@ ul li {
 .rotate-animation {
   animation: rotateBackAndForth 3s ease-in-out infinite;
 }
+
+
+  @media (max-width: 1200px) {
+    .firework-1{
+    display: none;
+    }
+    .firework-2{
+      width: 150px;
+      right: 150px;
+      top: 154px;
+    }
+    .firework-3{
+      width: 150px;
+      left: 120px;
+        top: 45px;
+    }
+    .firework-4{
+        display: none;
+    }
+
+
+    .rally-title {
+      font-size: 3em;
+      margin-bottom: 10px;
+
+    }
+
+    .hosted-by {
+      font-size: 1.5em;
+    }
+    .candidate-name {
+      font-size: 1.8em;
+    }
+
+    .candidate-title {
+      font-size: 1em;
+    }
+  }

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const raised = 3000;
+    const raised = 4000;
     const goal = 22000;
 
     document.getElementById('raised').textContent = `$${raised.toLocaleString()} Raised`;
