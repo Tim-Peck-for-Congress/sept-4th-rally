@@ -1,19 +1,28 @@
 {
   "name": "tim-peck-for-congress",
   "version": "1.0.0",
-  "description": "",
+  "description": "Tim Peck for Congress - Rally for Indiana-9 Democrats",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "political",
+    "rally",
+    "democrats",
+    "IN9",
+    "congress",
+    "Tim Peck",
+    "fundraising"
+  ],
+  "author": "Volunteer Developer: Alex Bezuska <abezuska@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.7.3",
     "cheerio": "^1.0.0-rc.12",
     "cors": "^2.8.5",
     "express": "^4.19.2",
+    "open": "^10.1.0",
     "puppeteer": "^22.15.0"
   }
 }

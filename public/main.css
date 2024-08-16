@@ -1,0 +1,659 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@900&family=Lobster:wght@900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: url('img/bg.png') !important;
+  background-attachment: fixed;
+  background-repeat: repeat;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  margin-bottom: 3rem !important;
+}
+
+h1, h2 {
+  color: #343a40;
+}
+
+.card {
+  background: #1b3560;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.card-body {
+  background: #1b3560;
+  color: white;
+  border-radius: 0 0 5px 5px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.card-text {
+  min-height: 52px;
+  color: #fff;
+}
+
+.btn-primary, .btn-secondary {
+  margin-right: 0.5rem;
+}
+
+.sponsor-btn {
+  display: inline-block;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.5), inset 0 -2px 5px rgba(0, 0, 0, 0.1);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.silver-level {
+  background: linear-gradient(to bottom, #c0c0c0, #a8a8a8);
+  font-size: 1.2rem;
+}
+
+.silver-level:hover {
+  background: linear-gradient(to bottom, #d9d9d9, #bfbfbf);
+}
+
+.gold-level {
+  background: linear-gradient(to bottom, #ffd700, #e6c200);
+  font-size: 1.5rem;
+}
+
+.gold-level:hover {
+  background: linear-gradient(to bottom, #ffec4d, #f0d84f);
+}
+
+.platinum-level {
+  background: linear-gradient(to bottom, #e5e4e2, #b3b2b1);
+  font-size: 1.8rem;
+}
+
+.platinum-level:hover {
+  background: linear-gradient(to bottom, #f0f0ef, #cacac8);
+}
+
+.sponsor-btn:hover {
+  color: white;
+}
+
+.sponsorship-levels {
+  padding-left: 0;
+}
+
+.sponsorship-levels li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.progress {
+  height: 40px;
+  background-color: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.custom-progress-bar {
+  background: linear-gradient(to right, #42a5f5, #1976d2);
+  position: relative;
+  height: 100%;
+  transition: width 0.4s ease;
+  z-index: 1;
+}
+
+.custom-progress-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.3) 100%);
+  transform: skewX(-25deg);
+  transition: 0.4s;
+  z-index: 2;
+  opacity: 0.8;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.fundraising-amount, .fundraising-goal {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #1976d2;
+}
+
+#thermometer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 767.98px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card:nth-child(even) {
+    flex-direction: column-reverse !important;
+  }
+
+  .candidates.section .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .candidates.section .col-md-3 {
+    flex: 1 1 100%;
+  }
+
+  .candidates.section .card {
+    max-height: 175px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .candidates.section .card img {
+    max-height: 160px;
+    max-width: 160px;
+    border-radius: 50%;
+    margin: 10px;
+  }
+
+  .candidates.section .card-body {
+    flex: 1;
+  }
+
+  .candidates.section .card:nth-child(odd) {
+    flex-direction: row;
+  }
+
+  .candidates.section .card:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+}
+
+.sponsorship .thermometer {
+  width: 50px;
+  height: 200px;
+  border: 1px solid #000;
+  position: relative;
+  background-color: #e0e0e0;
+  margin: 20px 0;
+}
+
+.sponsorship .thermometer-inner {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.wrap.container {
+  padding: 0;
+  min-height: 100%;
+  bottom: -80px;
+}
+
+.wrap.container::after {
+  content: '';
+  display: block;
+  height: 80px;
+}
+
+footer {
+  padding-top: 15px;
+  height: 80px;
+  background: #1b3560;
+}
+
+footer p {
+  font-size: 44px;
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+}
+
+footer p a {
+  color: white;
+}
+
+.sponsorship ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.sponsorship ul li {
+  font-size: 1.5em;
+}
+
+.sponsorship ul li span {
+  font-size: 2em;
+}
+
+.rally-title {
+  font-family: 'Lobster', cursive;
+  color: #AC0015;
+  font-size: 3.5em;
+  line-height: 1.2;
+  font-weight: 900;
+  margin-bottom: 0px;
+  transform: rotate(-3deg);
+}
+
+.hosted-by, .candidate-name, .candidate-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 900;
+}
+
+.hosted-by {
+  color: #1b3560;
+  font-size: 2em;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.candidate-name {
+  color: #1b3560;
+  font-size: 3em;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+}
+
+.candidate-title {
+  color: black;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
+.firework-1 {
+  position: absolute;
+  width: 219px;
+  right: 50px;
+  top: 150px;
+}
+
+.firework-2 {
+  position: absolute;
+  width: 100px;
+  right: 239px;
+  top: 44px;
+}
+
+.firework-3 {
+  position: absolute;
+  width: 109px;
+  left: 248px;
+  top: 202px;
+}
+
+.firework-4 {
+  position: absolute;
+  width: 200px;
+  left: 64px;
+  top: 37px;
+}
+
+@keyframes rotateBackAndForth {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.rotate-animation {
+  animation: rotateBackAndForth 3s ease-in-out infinite;
+}
+
+@media (max-width: 1200px) {
+  .firework-1 {
+    display: none;
+  }
+
+  .firework-2 {
+    width: 150px;
+    right: 150px;
+    top: 154px;
+  }
+
+  .firework-3 {
+    width: 150px;
+    left: 120px;
+    top: 45px;
+  }
+
+  .firework-4 {
+    display: none;
+  }
+
+  .rally-title {
+    font-size: 3em;
+    margin-bottom: 10px;
+  }
+
+  .hosted-by {
+    font-size: 1.5em;
+  }
+
+  .candidate-name {
+    font-size: 1.8em;
+  }
+
+  .candidate-title {
+    font-size: 1em;
+  }
+}
+
+
+@media (min-width: 1400px) {
+ 
+  .rally-title {
+    font-size: 4.5em;
+    margin-bottom: 10px;
+  }
+
+  .hosted-by {
+    font-size: 2.5em;
+  }
+
+  .candidate-name {
+    font-size: 2.5em;
+  }
+
+  .candidate-title {
+    font-size: 2.5em;
+  }
+}
+
+
+img {
+  max-width: 100%;
+}
+
+.sponsorship-box, .sponsors-box, .top-sponsors-box {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.fundraising-box {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fundraising-amount {
+  font-size: 2.5rem;
+  color: #007bff;
+  font-weight: bold;
+  text-align: center;
+}
+
+.fundraising-goal {
+  font-size: 1.5rem;
+  color: #6c757d;
+  text-align: center;
+}
+
+.custom-progress-bar {
+  background-color: #007bff;
+}
+
+.sponsorship-levels {
+  font-size: 1.2rem;
+}
+
+.sponsorship-levels li {
+  margin: 0 15px;
+}
+
+.btn {
+  margin-bottom: 10px;
+}
+
+.donate-button {
+  font-size: 1.2rem;
+  padding: 10px 30px;
+  background-color: #0069d9;
+  border-color: #0062cc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.donate-button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.top-sponsors-box {
+  background-color: #e3f2fd;
+  border-left: 5px solid #007bff;
+}
+
+.top-sponsors-list {
+  font-size: 1.3rem;
+  color: #007bff;
+}
+
+.sponsors-box ul {
+  font-size: 1.1rem;
+}
+
+.sponsors-box ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.sponsors-box ul li:last-child {
+  border-bottom: none;
+}
+
+.volunteer-section, .press-section {
+  background-color: #f8f9fa;
+}
+
+.volunteer-box, .press-box {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.volunteer-box h3, .press-box h3 {
+  font-size: 1.75rem;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.volunteer-box p.lead, .press-box p.lead {
+  font-size: 1.25rem;
+  color: #495057;
+}
+
+.volunteer-box .btn-primary {
+  font-size: 1.2rem;
+  padding: 12px 30px;
+  background-color: #0069d9;
+  border-color: #0062cc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.volunteer-box .btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+@media (max-width: 767.98px) {
+  .volunteer-box, .press-box {
+    padding: 20px;
+  }
+
+  .volunteer-box h3, .press-box h3 {
+    font-size: 1.5rem;
+  }
+
+  .btn-primary {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 975px) {
+  .candidates.section .card {
+    min-height: 192px;
+  }
+
+  .firework-1, .firework-2, .firework-3, .firework-4 {
+    display: none;
+  }
+}
+
+@media (max-width: 502px) {
+  .sponsorship strong {
+    font-size: 18px;
+  }
+
+  .candidates.section .card {
+    min-height: 233px;
+  }
+}
+
+@media (max-width: 483px) {
+  .candidates.section .card img {
+    display: none;
+  }
+}
+
+.btn .fas, .btn .fa {
+  margin-right: 4px;
+}
+
+.shiny-btn {
+  font-size: 1.5rem;
+  padding: 12px 30px;
+  background: linear-gradient(to bottom, #42a5f5, #1976d2);
+  color: white;
+  border: 2px solid #0d47a1;
+  border-radius: 8px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+}
+
+.shiny-btn i {
+  margin-right: 8px;
+}
+
+.shiny-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.1) 100%);
+  transform: skewX(-25deg);
+  transition: 0.5s;
+}
+
+.shiny-btn:hover::before {
+  left: 100%;
+  transition: 1s;
+}
+
+.shiny-btn:hover {
+  background: linear-gradient(to bottom, #479de3, #0f519d);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  color: white;
+}
+
+.map-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  margin-top: 30px;
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1200px) {
+  .map-container {
+    max-width: 100%;
+  }
+}
