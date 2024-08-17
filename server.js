@@ -22,8 +22,9 @@ const extractValues = (raisedStr, goalStr) => {
 };
 
 app.get('/scrape', async (req, res) => {
+  let browser;
   try {
-    const browser = await puppeteer.launch();
+    browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.setUserAgent(
       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
@@ -31,10 +32,11 @@ app.get('/scrape', async (req, res) => {
 
     const iframeUrl =
       'https://secure.actblue.com/cf/embed/goal_tracker/rallyrsvp?host_origin=https%3A%2F%2Fsecure.actblue.com&embed_id=AB1';
-    await page.goto(iframeUrl, { waitUntil: 'networkidle2' });
+    await page.goto(iframeUrl, { waitUntil: 'networkidle2', timeout: 60000 }); // 60 seconds timeout
 
-    await page.waitForSelector('.raised');
-    await page.waitForSelector('.goal');
+    // Wait longer for the elements to appear (up to 30 seconds)
+    await page.waitForSelector('.raised', { timeout: 30000 });
+    await page.waitForSelector('.goal', { timeout: 30000 });
 
     const data = await page.evaluate(() => {
       const raisedElement = document.querySelector('.raised');
@@ -50,8 +52,17 @@ app.get('/scrape', async (req, res) => {
     await browser.close();
     res.json(values);
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Error fetching donation data' });
+    console.error('Error during scraping:', error.message);
+
+    if (browser) {
+      await browser.close();
+    }
+
+    // Send detailed error to frontend
+    res.status(500).json({ 
+      error: 'Error fetching donation data', 
+      details: error.message 
+    });
   }
 });
 

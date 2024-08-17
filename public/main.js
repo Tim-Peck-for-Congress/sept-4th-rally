@@ -35,19 +35,28 @@ document.addEventListener("DOMContentLoaded", function() {
         fetch('/scrape')
             .then(response => response.json())
             .then(data => {
-                lastGoodData = data;
-                updateProgressBar(data.raised, data.goal);
+                if (data.error) {
+                    console.error('Scraping error:', data.details);
+                    if (firstScrape) {
+                        showError();
+                    } else if (lastGoodData) {
+                        updateProgressBar(lastGoodData.raised, lastGoodData.goal);
+                    }
+                } else {
+                    lastGoodData = data;
+                    updateProgressBar(data.raised, data.goal);
 
-                if (firstScrape) {
-                    hideError();
-                    firstScrape = false;
+                    if (firstScrape) {
+                        hideError();
+                        firstScrape = false;
+                    }
                 }
 
                 countdown = scrapeInterval;
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
-
+                
                 if (firstScrape) {
                     showError();
                 } else if (lastGoodData) {

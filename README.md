@@ -10,6 +10,8 @@ This is a Node.js web application that scrapes donation data from an embedded Ac
 - [Deployment](#deployment)
 - [Managing the Server](#managing-the-server)
 - [Dependencies](#dependencies)
+- [Author](#author)
+- [License](#license)
 
 ## Installation
 
@@ -118,15 +120,11 @@ Once the app is running on your VPS, you can manage the server using `pm2`:
 - **CORS**: Middleware to enable Cross-Origin Resource Sharing.
 - **Open**: Utility to open URLs in the default browser (used for local development).
 
-
-
 ## Author
 
 **Alex Bezuska**  
 Campaign Volunteer, 2024  
 [abezuska@gmail.com](mailto:abezuska@gmail.com)
-
-
 
 ## License
 

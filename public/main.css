@@ -1,10 +1,14 @@
 * {
   box-sizing: border-box;
+
 }
+
 
 html, body {
   height: 100%;
   margin: 0;
+  overflow-x: hidden;
+
 }
 
 body {
@@ -171,6 +175,9 @@ ul li {
 }
 
 @media (max-width: 767.98px) {
+  h1, h2 {
+    padding-left: 10px;
+  }
   .card {
     display: flex;
     flex-direction: column;
@@ -422,6 +429,31 @@ footer p a {
   }
 }
 
+@media (max-width: 700px) {
+ 
+
+ 
+
+  .rally-title {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    line-height: 3.3rem;
+  }
+
+  .hosted-by {
+    font-size: 3em;
+    line-height: 2.8rem;
+  }
+
+  .candidate-name {
+    font-size: 3em;
+  }
+
+  .candidate-title {
+    font-size: 2em;
+  }
+}
+
 
 img {
   max-width: 100%;
@@ -440,6 +472,9 @@ img {
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .fundraising-amount {
@@ -570,6 +605,13 @@ img {
 }
 
 @media (max-width: 502px) {
+  .text-start.google-map-btn{
+    text-align: center !important;
+
+  }
+  footer p{
+    font-size: 26px;
+  }
   .sponsorship strong {
     font-size: 18px;
   }
@@ -580,8 +622,9 @@ img {
 }
 
 @media (max-width: 483px) {
-  .candidates.section .card img {
-    display: none;
+  .candidates.section .card {
+    margin: 10px;
+    min-height: 278px;
   }
 }
 
