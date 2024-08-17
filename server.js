@@ -33,15 +33,15 @@ app.get('/scrape', async (req, res) => {
       'https://secure.actblue.com/cf/embed/goal_tracker/rallyrsvp?host_origin=https%3A%2F%2Fsecure.actblue.com&embed_id=AB1';
     await page.goto(iframeUrl, { waitUntil: 'networkidle2' });
 
-    const htmlContent = await page.content();
-    fs.writeFileSync('iframe_page.html', htmlContent);
+    await page.waitForSelector('.raised');
+    await page.waitForSelector('.goal');
 
     const data = await page.evaluate(() => {
       const raisedElement = document.querySelector('.raised');
       const goalElement = document.querySelector('.goal');
 
-      const raised = raisedElement ? raisedElement.textContent : 'N/A';
-      const goal = goalElement ? goalElement.textContent : 'N/A';
+      const raised = raisedElement ? raisedElement.textContent.trim() : '0';
+      const goal = goalElement ? goalElement.textContent.trim() : '0';
 
       return { raised, goal };
     });
@@ -50,6 +50,7 @@ app.get('/scrape', async (req, res) => {
     await browser.close();
     res.json(values);
   } catch (error) {
+    console.error(error);
     res.status(500).json({ error: 'Error fetching donation data' });
   }
 });
