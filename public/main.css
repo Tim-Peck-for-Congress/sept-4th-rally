@@ -14,7 +14,8 @@ html, body {
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background: url('img/bg.png') !important;
-  background-attachment: fixed;
+  background-attachment: 
+  fixed;
   background-repeat: repeat;
   margin: 0;
   padding: 0;
@@ -22,6 +23,7 @@ body {
 
 .header {
   margin-bottom: 3rem !important;
+  position: relative;
 }
 
 h1, h2 {
@@ -50,12 +52,27 @@ h1, h2 {
 }
 
 .card-text {
+  font-size: 18px !important;
   min-height: 52px;
   color: #fff;
 }
 
 .btn-primary, .btn-secondary {
-  margin-right: 0.5rem;
+  padding: 0.75rem 1.25rem; 
+  font-size: 1rem; 
+}
+
+
+
+.btn-primary {
+  background-color: #1f396f;
+  border-color: #1f396f;
+  
+}
+
+
+.card-body .btn-primary{
+  background-color: #466ebf;
 }
 
 .sponsor-btn {
@@ -126,6 +143,7 @@ h1, h2 {
   z-index: 1;
 }
 
+
 .custom-progress-bar::before {
   content: '';
   position: absolute;
@@ -178,6 +196,8 @@ ul li {
   h1, h2 {
     padding-left: 10px;
   }
+
+
   .card {
     display: flex;
     flex-direction: column;
@@ -267,7 +287,7 @@ footer p {
 }
 
 footer p a {
-  color: white;
+  color: white !important;
 }
 
 .sponsorship ul {
@@ -283,15 +303,6 @@ footer p a {
   font-size: 2em;
 }
 
-.rally-title {
-  font-family: 'Lobster', cursive;
-  color: #AC0015;
-  font-size: 3.5em;
-  line-height: 1.2;
-  font-weight: 900;
-  margin-bottom: 0px;
-  transform: rotate(-3deg);
-}
 
 .hosted-by, .candidate-name, .candidate-title {
   font-family: 'Bebas Neue', sans-serif;
@@ -300,21 +311,21 @@ footer p a {
 
 .hosted-by {
   color: #1b3560;
-  font-size: 2em;
+  font-size: 50px;
   font-style: italic;
   margin-bottom: 0;
 }
 
 .candidate-name {
   color: #1b3560;
-  font-size: 3em;
+  font-size: 51px;
   text-transform: uppercase;
   margin-bottom: 0px;
 }
 
 .candidate-title {
   color: black;
-  font-size: 1.3em;
+  font-size: 22px;
   text-transform: uppercase;
   margin-top: 0;
 }
@@ -322,28 +333,28 @@ footer p a {
 .firework-1 {
   position: absolute;
   width: 219px;
-  right: 50px;
+  right: 25px;
   top: 150px;
 }
 
 .firework-2 {
   position: absolute;
   width: 100px;
-  right: 239px;
+  right: 200px;
   top: 44px;
 }
 
 .firework-3 {
   position: absolute;
   width: 109px;
-  left: 248px;
+  left: 200px;
   top: 202px;
 }
 
 .firework-4 {
   position: absolute;
   width: 200px;
-  left: 64px;
+  left: 25px;
   top: 37px;
 }
 
@@ -369,20 +380,22 @@ footer p a {
   animation: rotateBackAndForth 3s ease-in-out infinite;
 }
 
+
 @media (max-width: 1200px) {
+ 
   .firework-1 {
     display: none;
   }
 
   .firework-2 {
     width: 150px;
-    right: 150px;
-    top: 154px;
+    right: 34px;
+    top: 173px;
   }
 
   .firework-3 {
     width: 150px;
-    left: 120px;
+    left: -47px !important;
     top: 45px;
   }
 
@@ -390,73 +403,56 @@ footer p a {
     display: none;
   }
 
-  .rally-title {
-    font-size: 3em;
-    margin-bottom: 10px;
+
+
+  
+}
+
+@media (max-width: 1399px) {
+  .firework-1 {
+    right: 20px;
   }
 
-  .hosted-by {
-    font-size: 1.5em;
+  .firework-2 {
+
+    right: 50px;
+ 
   }
 
-  .candidate-name {
-    font-size: 1.8em;
+  .firework-3 {
+  
+    left: 20px;
+ 
   }
 
-  .candidate-title {
-    font-size: 1em;
+  .firework-4 {
+    top: -34px;
+    left: -3px;
   }
 }
 
 
-@media (min-width: 1400px) {
- 
-  .rally-title {
-    font-size: 4.5em;
-    margin-bottom: 10px;
-  }
 
-  .hosted-by {
-    font-size: 2.5em;
-  }
-
-  .candidate-name {
-    font-size: 2.5em;
-  }
-
-  .candidate-title {
-    font-size: 2.5em;
-  }
-}
-
-@media (max-width: 700px) {
- 
-
- 
-
-  .rally-title {
-    font-size: 3.5em;
-    margin-bottom: 10px;
-    line-height: 3.3rem;
-  }
-
-  .hosted-by {
-    font-size: 3em;
-    line-height: 2.8rem;
-  }
-
-  .candidate-name {
-    font-size: 3em;
-  }
-
-  .candidate-title {
-    font-size: 2em;
-  }
-}
 
 
 img {
   max-width: 100%;
+}
+
+.rally-logo {
+  max-width: 740px !important;
+}
+
+@media (max-width: 800px) {
+  .rally-logo{
+    max-width: 100% !important;
+  }
+
+}
+
+
+section h2{
+  margin-bottom: 30px !important;
 }
 
 .sponsorship-box, .sponsors-box, .top-sponsors-box {
@@ -465,6 +461,64 @@ img {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+}
+
+/* Style for the top sponsors section */
+.top-sponsors-box {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Larger headers for donation levels */
+.top-sponsors-box h4 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Styling the donor names */
+.top-sponsors-box .donor-name {
+  font-size: 1.2rem;
+  color: #555;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Centering and adding more space between columns */
+.top-sponsors-box .row {
+  justify-content: center;
+}
+
+/* Add some styling to the overall section */
+.top-sponsors-box h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #007bff;
+  margin-bottom: 30px;
+}
+
+/* Add some padding to the list items */
+.top-sponsors-box ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+
+.donor-name {
+  font-style: italic;
+  font-size: 18px !important;
+  margin-bottom: 0px;
+  display: block;
+}
+
+.donor-amount {
+  font-weight: bold;
+  font-size: 1.4rem !important; 
+  margin-bottom: 0px;
+  display: block;
 }
 
 .fundraising-box {
@@ -554,10 +608,13 @@ img {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.volunteer-box h3, .press-box h3 {
+
+h3 {
   font-size: 1.75rem;
-  color: #007bff;
   font-weight: bold;
+}
+.volunteer-box h3, .press-box h3 {
+  color: #007bff;
 }
 
 .volunteer-box p.lead, .press-box p.lead {
@@ -565,14 +622,7 @@ img {
   color: #495057;
 }
 
-.volunteer-box .btn-primary {
-  font-size: 1.2rem;
-  padding: 12px 30px;
-  background-color: #0069d9;
-  border-color: #0062cc;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
-}
+
 
 .volunteer-box .btn-primary:hover {
   background-color: #0056b3;
@@ -649,7 +699,7 @@ img {
 }
 
 .shiny-btn i {
-  margin-right: 8px;
+  margin-right: 15px !important;
 }
 
 .shiny-btn::before {
@@ -697,4 +747,11 @@ img {
   .map-container {
     max-width: 100%;
   }
+
 }
+
+
+a:not(.btn) {
+  color: #1f396f;
+}
+
