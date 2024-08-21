@@ -754,4 +754,19 @@ h3 {
 a:not(.btn) {
   color: #1f396f;
 }
+.row.equal-height{
+  margin-bottom: 50px;
+}
 
+
+
+.row.equal-height .fundraising-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Ensure the boxes take up full height */
+}
+
+.row.equal-height .col-lg-6.col-md-12 {
+  display: flex;
+}
