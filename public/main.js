@@ -1,11 +1,18 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const scrapeInterval = 30; // 30 seconds
+
+    // Manual adjustment for in-persona dn check donations
+    let inPersonDonations = 0;
+
+
+    const scrapeInterval = 30;
     let countdown = scrapeInterval;
     let lastGoodData = null;
     let firstScrape = true;
 
-    const updateProgressBar = (raised, goal) => {
+    const updateProgressBar = (actblue, goal) => {
+        let raised = actblue + inPersonDonations;
         document.getElementById('raised').textContent = `$${raised.toLocaleString()} Raised`;
+       // document.getElementById('breakdown').textContent = `$${actblue.toLocaleString()} via Act Blue + $${inPersonDonations.toLocaleString()} checks and in-person donations` ;
         document.getElementById('goal').textContent = `Goal $${goal.toLocaleString()}`;
 
         const progressPercentage = (raised / goal) * 100;
