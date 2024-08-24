@@ -30,6 +30,8 @@ h1, h2 {
   color: #343a40;
 }
 
+
+
 .card {
   background: #1b3560;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -188,9 +190,7 @@ ul li {
   margin-bottom: 0.5rem;
 }
 
-.section {
-  margin-bottom: 3rem;
-}
+
 
 @media (max-width: 767.98px) {
 
@@ -306,12 +306,12 @@ footer p a {
 }
 
 
-.hosted-by, .candidate-name, .candidate-title {
+.heading-font, .candidate-name, .candidate-title {
   font-family: 'Bebas Neue', sans-serif;
   font-weight: 900;
 }
 
-.hosted-by {
+.heading-font {
   color: #1b3560;
   font-size: 50px;
   font-style: italic;
@@ -496,10 +496,9 @@ section h2{
 
 /* Add some styling to the overall section */
 .top-sponsors-box h3 {
-  font-size: 2rem;
-  font-weight: 700;
+
   color: #007bff;
-  margin-bottom: 30px;
+
 }
 
 /* Add some padding to the list items */
@@ -523,7 +522,7 @@ section h2{
   display: block;
 }
 
-.fundraising-box {
+.good-box {
   background-color: #f8f9fa;
   padding: 30px;
   border-radius: 10px;
@@ -632,6 +631,9 @@ h3 {
 }
 
 @media (max-width: 767.98px) {
+  .candidates.section .card{
+    min-height: 220px;
+  }
   .volunteer-box, .press-box {
     padding: 20px;
   }
@@ -676,7 +678,13 @@ h3 {
 @media (max-width: 483px) {
   .candidates.section .card {
     margin: 10px;
-    min-height: 278px;
+    min-height: 308px;
+  }
+}
+
+@media (max-width: 307px) {
+  .candidates.section .card img{
+   display: none;
   }
 }
 
@@ -761,15 +769,6 @@ a:not(.btn) {
 }
 
 
-
-.row.equal-height .fundraising-box {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%; 
-  */
-}
-
 .row.equal-height .col-lg-6.col-md-12 {
   display: flex;
 }
@@ -787,4 +786,24 @@ a:not(.btn) {
 
 .card-text{
   min-height: 67px;
+}
+
+
+.volunteer-box h3, .press-box h3, .register-box h3 {
+  color: #1976d2;
+}
+
+
+
+.rally .good-box{
+  padding-top: 40px;
+}
+
+section{
+  margin-bottom: 20px;
+}
+
+.special-guests.section .card{
+  margin-left: 5px;
+  margin-right: 5px;
 }
