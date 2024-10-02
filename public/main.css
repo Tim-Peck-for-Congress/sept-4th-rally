@@ -807,3 +807,10 @@ section{
   margin-left: 5px;
   margin-right: 5px;
 }
+
+
+
+.event-buttons .shiny-btn{
+  min-width: 405px !important;
+  padding-left: 30px;
+}
